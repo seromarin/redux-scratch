@@ -22,6 +22,10 @@ export const resetAction: IAction = {
     type: 'RESET',
 }
 
+export const defaultAction: IAction = {
+    type: 'DEFAULT',
+}
+
 // export {
 //     incrementAction,
 //     decrementAction,
