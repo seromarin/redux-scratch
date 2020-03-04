@@ -1,9 +1,9 @@
-import { incrementAction, decrementAction, multiplyAction, divideAction, resetAction } from "./actions/counter.action";
-import { counterReducer } from "./reducers/counter.reducer";
+import { Store, createStore } from 'redux';
+import { counterReducer } from './reducers/counter.reducer';
+import { incrementAction } from './actions/counter.action';
 
+const store: Store = createStore(counterReducer)
 
-console.log(counterReducer(0, incrementAction))
-console.log(counterReducer(0, decrementAction))
-console.log(counterReducer(10, multiplyAction))
-console.log(counterReducer(10, divideAction))
-console.log(counterReducer(10, resetAction))
+store.subscribe(() => console.log('Subs: ', store.getState()))
+
+store.dispatch(incrementAction)
