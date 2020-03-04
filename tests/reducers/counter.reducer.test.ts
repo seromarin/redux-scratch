@@ -1,6 +1,6 @@
 import { counterReducer } from "../../reducers/counter.reducer";
 
-import { incrementAction, decrementAction, multiplyAction, divideAction } from "../../actions/counter.action";
+import { incrementAction, decrementAction, multiplyAction, divideAction, resetAction } from "../../actions/counter.action";
 
 describe('counter', function() {
 
@@ -23,11 +23,14 @@ describe('counter', function() {
         let result = counterReducer(10, divideAction);
         expect(result).toBe(5);    
     })
+    test('reset', function() {
+        let result = counterReducer(10, resetAction);
+        expect(result).toBe(0);    
+    })
 
     test('null', function() {
         let result = counterReducer(0, {
             type: 'NEGATIVE',
-            payload: 2,
         });
         expect(result).toBe(0); 
     })

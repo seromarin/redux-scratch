@@ -16,6 +16,9 @@ function reducer(state = 10, action: IAction) {
     case "DIVIDE":
       newState = state /= action.payload ?? 2;
       break;
+    case "RESET":
+      newState = 0;
+      break;
     default:
       newState = state;
       break;

@@ -1,26 +1,31 @@
 import IAction from "../interfaces/action.interface"
 
-const incrementAction: IAction = {
+export const incrementAction: IAction = {
     type: 'INCREMENT',
 }
 
-const decrementAction: IAction = {
+export const decrementAction: IAction = {
     type: 'DECREMENT',
 }
 
-const multiplyAction: IAction = {
+export const multiplyAction: IAction = {
     type: 'MULTIPLY',
     payload: 2,
 }
 
-const divideAction: IAction = {
+export const divideAction: IAction = {
     type: 'DIVIDE',
     payload: 2,
 }
 
-export {
-    incrementAction,
-    decrementAction,
-    multiplyAction,
-    divideAction
+export const resetAction: IAction = {
+    type: 'RESET',
 }
+
+// export {
+//     incrementAction,
+//     decrementAction,
+//     multiplyAction,
+//     divideAction,
+//     resetAction
+// }
